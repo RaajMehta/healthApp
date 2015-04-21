@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="dashboard.css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}"></script>
+        <script type="text/javascript" src="3D_PieChart.js"></script>
+        <script type="text/javascript" src="BarChart.js"></script>
+        <script type="text/javascript" src="LineChart.js"></script>
+    </head>
+    <body>
+        <header class="bs-docs-nav">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand"><img alt="Alight" src="./images/company_logo.jpg" class="logo"></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">Dashboard <span class="sr-only">(current)</span></a></li>
+                            <li><a href="map/map.html">Create Plan</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Community<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Help Forums</a></li>
+                                    <li><a href="#">Discussions</a></li>
+                                    <li><a href="#">Activity Groups</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Premium</a></li>
+                            <li><a href="#">Store</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><img alt="User" src="images/user.png" class="img-circle"></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img alt="Message" src="images/Android-Messages.png"><span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><img alt="Setting" src="images/settings.png"><span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="divider"></li>
+                                    <li><a href="#">Settings</a></li>
+                                    <li><a href="#">Help</a></li>
+                                    <li><a href="#">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="bs-docs-header container">
+            <div class="row vertical-offset-100">
+                <!--                <div class="col-md-3">
+                                    <div class="panel panel-default custom-style">
+                                        <div class="panel-heading">
+                                            Recent Exercise
+                                        </div>
+                                        <div class="panel-body">
+                                            <img class="img-responsive img-size" src="images/man.png">
+                                            <p class="title">No recent exercise</p>
+                                            <p class="message">
+                                                Log exercises to measure your performance and gauge your improvements over time!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="panel panel-default custom-style">
+                                        <div class="panel-body">
+                                            <div class="user-block img-responsive">
+                                                <img src="images/two_user.png" class="img-responsive user-image-size">
+                                                <span class="user-font">SmartLamp is for fun with friends!</span>
+                                            </div>
+                                            <div class="fb-image-block">
+                                                <span><img src="images/Facebook_logo-2.jpg" class="fb-image-size"></span>
+                                                <span><a href="..." class="a-connect-font">Connect Friends</a></span> 
+                                            </div>
+                                            <div>
+                                                <span><img src="images/message_1.png" class="email-image-size"></span>
+                                                <span><a href="..." class="a-connect-font">Send Email</a></span>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>-->
+                <div class="col-md-6">
+                    <div class="panel panel-default horizontal-panel Chart" id="ex6">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="panel panel-default horizontal-panel Chart" id="piechart_3d">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-default horizontal-panel Chart" id="ex2">
+                    </div>
+                </div>
+
+                <!--                <div class="col-md-3">
+                                    <div class="panel panel-default horizontal-panel Chart" id="piechart_3d">
+                
+                
+                                                                    <link href="map/css/stackedBars.css"/>
+                                                                    <form>
+                                                                        <label><input type="radio" name="mode" value="grouped"> Grouped</label>
+                                                                        <label><input type="radio" name="mode" value="stacked" checked> Stacked</label>
+                                                                    </form>
+                                                                    <script src="http://d3js.org/d3.v3.min.js"></script>
+                                                                    <script src="map/js/stackedBar.js"></script>
+                                    </div>
+                                </div>-->
+            </div>
+        </div>
+        <footer class="bs-docs-footer">
+            <div class="container">
+                <div class="bs-docs-social">
+                    <ul class="bs-docs-social-buttons">
+                        <li><a href="..."><img alt="Facebook" src="images/Fb_Icon.png"></a></li>
+                        <li><a href="..."><img alt="Twitter" src="images/Twitter_Icon.png"></a></li>
+                        <li><a href="..."><img alt="Instagram" src="images/Instagram_Icon.png"></a></li>
+                        <li><a href="..."><img alt="Pinterest" src="images/Pinterest_icon.png"></a></li>
+                        <li><a href="..."><img alt="Youtube" src="images/YouTube_Icon.png"></a></li>
+                        <li><a href="..."><img alt="Google+" src="images/Google+_Icon.png"></a></li>
+                        <li><a href="..."><img alt="BLOG" src="images/Blog_Icon.png"></a></li>
+                    </ul>
+                </div>
+                <div class="bs-docs-social">
+                    <ul class="bs-docs-social-buttons">
+                        <li><a href="...">About Us</a></li>
+                        <li><a href="...">Careers</a></li>
+                        <li><a href="...">Retailers</a></li>
+                        <li><a href="...">Affiliates</a></li>
+                        <li><a href="...">Corporate Wellness</a></li>
+                        <li><a href="...">API</a></li>
+                        <li><a href="...">Help</a></li>
+                    </ul>
+                </div>
+                <div class="bs-docs-social">
+                    <ul class="bs-docs-social-buttons">
+                        <p>&copy;2015 Alight Inc. All rights reserved.</p>
+                        <li><a href="...">Privacy Policy</a></li>
+                        <li><a href="...">Terms of Use</a></li>
+                        <li><a href="...">Returns & Warranty</a></li>
+                        <li><a href="...">Wear & Care</a></li>
+                        <li><a href="...">Recall & Safety Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
+
+
+<!--                            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                                <div class="flipper">
+                                    <div class="front">
+                                        <span class="name">David Walsh</span>
+                                    </div>
+                                    <div class="back">
+                                        <div class="back-logo"></div>
+                                        <div class="back-title">@davidwalshblog</div>
+                                        <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic, CSS Tinkerer, PHP Hacker, and web lover.</p>
+                                    </div>
+                                </div>
+                            </div>-->

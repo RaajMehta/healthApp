@@ -1,0 +1,301 @@
+.bs-docs-nav {
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+.bs-docs-footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 100px;
+    color: #767676;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}
+.bs-docs-social {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.bs-docs-social-buttons {
+    display: inline-block;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.bs-docs-social-buttons a{
+    text-decoration: none;
+}
+.bs-docs-social-buttons a:hover{
+    text-decoration: none;
+    color: #111f36 !important;
+}
+.bs-docs-social-buttons li {
+    display: inline-block;
+    padding: 5px 8px;
+    line-height: 1;
+}
+.container-fluid, .navbar-default, .navbar-collapse{
+    background-color: #000;
+}
+.navbar-default .navbar-nav>li>a{
+    color:black;
+}
+ul.nav a{
+    color: #2e6f92;
+}
+ul.nav a:hover { 
+    background-color: #2e6f90 !important;
+}
+ul.nav img{
+    min-height:15px; height:20px;
+    min-width: 15px; width: 20px;
+}
+.navbar .nav > li > a:hover, .navbar .nav > li > a:hover:first-letter { 
+    color:          #111f36;                      
+    text-shadow:    none;
+    transition: all 0.8s ease-in-out 0s;
+}
+.navbar .nav > li > a:active, .navbar .nav > li > a:active:first-letter,
+.navbar .nav > li.current-menu-item > a, 
+.navbar .nav > li.current-menu-ancestor > a,
+.navbar .nav > li.current-menu-item > a:first-letter, 
+.navbar .nav > li.current-menu-ancestor > a:first-letter {
+    font:100 25px "Proxima Nova Regular",Arial,sans-serif;
+    color:          white;
+    text-shadow:    none;
+}
+.navbar-brand, .navbar-nav>li>a {
+    line-height: 65px;
+    height: 65px;
+    padding-top: 0;
+}
+ul.nav li.dropdown:hover ul.dropdown-menu{
+    display: block;
+    transition-delay: 0.5s;
+}
+img{
+    height: 18px;
+    width: 20px;
+}
+img:hover{
+    opacity: 0.5;
+}
+.bs-docs-header {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 24px;
+    text-align: left;
+}
+.vertical-offset-100 {
+    margin-top: 50px;
+}
+.img-responsive {
+    display: block;
+    height: auto;
+    margin: auto;
+    margin-top: 80px;
+}
+.img-size{
+    height: 125px;
+    width: 125px;
+}
+
+.user-block{
+    height: 100px;
+    width: 150px;
+}
+.user-image-size{
+    height: 100px;
+    width: 150px;
+}
+.user-font, .a-connect-font{
+    font-size: 16px;
+    font-family: 'Proxima Nova Bold',sans-serif;
+    color: #585858;
+    text-align: right;
+    margin: 23px 0 113px;
+}
+
+.fb-image-block{
+    margin-top: 100px;
+    width: 250px;
+}
+.fb-image-size, .email-image-size{
+    height: 50px;
+    width: 50px;
+}
+
+
+.graph-size{
+    height: 246px;
+    width: 245px;
+}
+
+.title{
+    vertical-align: middle;
+    margin-top: 12px;
+    font-size: 18px;
+    font-family: 'Proxima Nova Light',sans-serif;
+    color: #3c3c3c;
+}
+.message{
+    alignment-adjust: middle;
+    margin-top: 12px;
+    font-size: 16px;
+    font-family: 'Proxima Nova Light',sans-serif;
+    color: #585858;
+}
+.panel {
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.55);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+div#banner {  
+    height:653px;  
+    margin: 0px auto;  
+    background:url(../images/1.jpg) repeat 0 0;       
+}
+.custom-style{
+    background: #fff;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    height: 560px;
+    /*width: 275px;*/ 
+}
+.custom-style-min{
+    background: #fff;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    height: 278px;
+    width: 275px;
+}
+.horizontal-panel{
+    background: #fff;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    height: 278px;
+    width: 568px;
+}
+footer{
+    background-color: white;
+}
+
+.flip-container {
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+    border: 1px solid #ccc;
+}
+
+.flip-container:hover .flipper,  
+.flip-container.hover .flipper {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+    width: 320px;
+    height: 427px;
+}
+
+.flipper {
+    -webkit-transition: 0.6s;
+    -webkit-transform-style: preserve-3d;
+
+    -moz-transition: 0.6s;
+    -moz-transform-style: preserve-3d;
+
+    -o-transition: 0.6s;
+    -o-transform-style: preserve-3d;
+
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+.front, .back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front {
+    background: url(http://davidwalsh.name/demo/dwflip.jpg) 0 0 no-repeat;
+    z-index: 2;
+}
+
+.back {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    background: #f8f8f8;
+}
+
+.front .name {
+    font-size: 2em;
+    display: inline-block;
+    background: rgba(33, 33, 33, 0.9);
+    color: #f8f8f8;
+    font-family: Courier;
+    padding: 5px 10px;
+    border-radius: 5px;
+    bottom: 60px;
+    left: 25%;
+    position: absolute;
+    text-shadow: 0.1em 0.1em 0.05em #333;
+
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+}
+
+.back-logo {
+    position: absolute;
+    top: 40px;
+    left: 90px;
+    width: 160px;
+    height: 117px;
+    background: url(http://davidwalsh.name/demo/logo.png) 0 0 no-repeat;
+}
+
+.back-title {
+    font-weight: bold;
+    color: #00304a;
+    position: absolute;
+    top: 180px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    text-shadow: 0.1em 0.1em 0.05em #acd7e5;
+    font-family: Courier;
+    font-size: 2em;
+}
+
+.back p {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0 20px;
+    font-family: arial;
+    line-height: 2em;
+}
+
+
+.Chart{
+    width: 568px; 
+    height: 278px; 
+}

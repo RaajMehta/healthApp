@@ -1,0 +1,557 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+        <title>File Access with Drag and Drop</title>
+        <link rel="stylesheet" href="http://js.arcgis.com/3.13/dijit/themes/claro/claro.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.13/esri/css/esri.css" />
+        <link rel="stylesheet" href="list.css"/>
+        <link href="style.css" rel="stylesheet">
+        <!--<link rel="stylesheet" href="css/layout.css" />-->
+        <link rel="stylesheet" href="map/css/map.css"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="http://js.arcgis.com/3.13/"></script>
+        <script language="javascript" type="text/javascript" src="fullcalendar.min.js"></script>
+        <script type="text/javascript" src="user.js"></script>
+        <script type="text/javascript" src="JS/map_dragdrop.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.js"></script>
+        <script type="text/javascript" src="list.js"></script>
+    </head>
+    <body class="body">
+        <div class="container-fluid">
+            <div class="row vertical-offset-100">
+                <div class="col-md-4">
+                    <div class="panel panel-primary custom-style">
+                        <div class="panel-heading">
+                            Calendar
+                        </div>
+                        <div class="panel-body">
+                            <div class="widget widget-nopad">
+                                <div class="widget-header"> 
+                                    <h3> Recent News</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <div id='calendar'>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-primary custom-style">
+                        <div class="panel-heading">  
+                            Time Duration
+                        </div>
+                        <div class="panel-body">
+                            <div class="sideBySide">
+                                <div class="left">
+                                    <ul class="source connected">
+                                        <li class="btn-danger movable">
+                                            <img src="images/edit-delete.png" alt="Not Allowed" class="img-responsive not_allowed">
+                                        </li>
+                                        <li class="movable">8:00 AM - 9:00 AM
+                                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-xs pull-right"><i class="glyphicon glyphicon-play"></i></a>
+                                            <div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Frequency</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" id="example" rel="popover" data-content="It's so simple to create a tooltop for my website!" data-original-title="Twitter Bootstrap Popover">
+                                                                        Initiated
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="text" name="activated_lighter" readonly value="3">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row limit">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="right" data-html="true" data-trigger="hover" data-content="User can set the limit">
+                                                                        Limit
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="quantity" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="User can set the days">
+                                                                        Days
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="days" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary" id="showtoast">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="movable">9:00 AM - 10:00 AM
+                                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-xs pull-right"><i class="glyphicon glyphicon-play"></i></a>
+                                            <div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Frequency</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="Activated Lighter during time">
+                                                                        Initiated
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="text" name="activated_lighter" readonly value="3">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row limit">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="right" data-html="true" data-trigger="hover" data-content="User can set the limit">
+                                                                        Limit
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="quantity" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="User can set the days">
+                                                                        Days
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="days" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="movable">10:00 AM - 11:00 AM
+                                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-xs pull-right"><i class="glyphicon glyphicon-play"></i></a>
+                                            <div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Frequency</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="Activated Lighter during time">
+                                                                        Initiated
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="text" name="activated_lighter" readonly value="3">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row limit">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="right" data-html="true" data-trigger="hover" data-content="User can set the limit">
+                                                                        Limit
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="quantity" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="User can set the days">
+                                                                        Days
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="days" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="movable">11:00 AM - 12:00 PM
+                                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-xs pull-right"><i class="glyphicon glyphicon-play"></i></a>
+                                            <div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Frequency</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="Activated Lighter during time">
+                                                                        Initiated
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="text" name="activated_lighter" readonly value="3">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row limit">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="right" data-html="true" data-trigger="hover" data-content="User can set the limit">
+                                                                        Limit
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="quantity" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="User can set the days">
+                                                                        Days
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="days" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="movable">12:00 PM - 1:00 PM
+                                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-xs pull-right"><i class="glyphicon glyphicon-play"></i></a>
+                                            <div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Frequency</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="Activated Lighter during time">
+                                                                        Initiated
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="text" name="activated_lighter" readonly value="3">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row limit">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="right" data-html="true" data-trigger="hover" data-content="User can set the limit">
+                                                                        Limit
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="quantity" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="User can set the days">
+                                                                        Days
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="days" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="movable">1:00 PM - 2:00 PM
+                                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-xs pull-right"><i class="glyphicon glyphicon-play"></i></a>
+                                            <div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Frequency</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="Activated Lighter during time">
+                                                                        Initiated
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="text" name="activated_lighter" readonly value="3">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row limit">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="right" data-html="true" data-trigger="hover" data-content="User can set the limit">
+                                                                        Limit
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="quantity" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="User can set the days">
+                                                                        Days
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="days" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="movable">2:00 PM - 3:00 PM
+                                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-xs pull-right"><i class="glyphicon glyphicon-play"></i></a>
+                                            <div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Frequency</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="Activated Lighter during time">
+                                                                        Initiated
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="text" name="activated_lighter" readonly value="3">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row limit">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="right" data-html="true" data-trigger="hover" data-content="User can set the limit">
+                                                                        Limit
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="quantity" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="User can set the days">
+                                                                        Days
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="days" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="movable">3:00 PM - 4:00 PM
+                                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-xs pull-right"><i class="glyphicon glyphicon-play"></i></a>
+                                            <div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Frequency</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="Activated Lighter during time">
+                                                                        Initiated
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="text" name="activated_lighter" readonly value="3">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row limit">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="right" data-html="true" data-trigger="hover" data-content="User can set the limit">
+                                                                        Limit
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="quantity" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="User can set the days">
+                                                                        Days
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="days" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="movable">4:00 PM - 5:00 PM
+                                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-xs pull-right"><i class="glyphicon glyphicon-play"></i></a>
+                                            <div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Frequency</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="Activated Lighter during time">
+                                                                        Initiated
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="text" name="activated_lighter" readonly value="3">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row limit">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="right" data-html="true" data-trigger="hover" data-content="User can set the limit">
+                                                                        Limit
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="quantity" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="User can set the days">
+                                                                        Days
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="days" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="movable">5:00 PM - 6:00 PM
+                                            <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-xs pull-right"><i class="glyphicon glyphicon-play"></i></a>
+                                            <div  class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                            <h4 class="modal-title" id="myModalLabel">Frequency</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container-fluid">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="Activated Lighter during time">
+                                                                        Initiated
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="text" name="activated_lighter" readonly value="3">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row limit">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="right" data-html="true" data-trigger="hover" data-content="User can set the limit">
+                                                                        Limit
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="quantity" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-md-offset-2" data-container=".row" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="User can set the days">
+                                                                        Days
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <input type="number" name="days" min="0" value="0">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="right">
+                                    <ul class="target connected">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="panel panel-primary custom-style">
+                        <div class="panel-heading">
+                            Map
+                        </div>
+                    </div>
+                </div>
+<!--                <div class="col-md-5">
+                    <div class="panel panel-primary custom-style">
+                        <div class="panel-heading">
+                            Map
+                        </div>
+                        <div class="panel-body" id="mapCanvas" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
+                            <div id="mainWindow" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline',gutters:false">
+                                <div id='msg' style='color:red;display:none;padding:4px;'> 'You are using a browser that
+                                    doesn't support drag/drop use the file upload box below to add your csv:'
+                                </div>
+                                <form id="uploadForm" style='display:none;padding:4px;' method="post" enctype="multipart/form-data">
+                                    <input type="file" name="data" id="inFile" size="15" />
+                                </form>
+                            </div>
+                            <div id="clearButton" class="roundedCorner">
+                                <span>Clear Map</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+<!--        <div id="mainWindow" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline',gutters:false">
+            <div id='msg' style='color:red;display:none;padding:4px;'> 'You are using a browser that
+                doesn't support drag/drop use the file upload box below to add your csv:'
+            </div>
+            <form id="uploadForm" style='display:none;padding:4px;' method="post" enctype="multipart/form-data">
+                <input type="file" name="data" id="inFile" size="15" />
+            </form>
+        </div>-->
+    </body>
+</html>

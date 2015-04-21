@@ -1,0 +1,79 @@
+
+div#banner {  
+    height:653px;  
+    margin: 0px auto;  
+    background:url(../images/asd1.jpg) repeat 0 0;       
+}
+ul.nav a:hover { 
+    background-color: #4abdbd !important;
+}
+ul.nav img{
+    min-height:20px; height:35px;
+    min-width: 20px; width: 35px;
+}
+.navbar .nav > li > a:hover, .navbar .nav > li > a:hover:first-letter { 
+    color:          white;                      
+    text-shadow:    none;
+    transition: all 0.8s ease-in-out 0s;
+}
+.navbar .nav > li > a:active, .navbar .nav > li > a:active:first-letter,
+.navbar .nav > li.current-menu-item > a, 
+.navbar .nav > li.current-menu-ancestor > a,
+.navbar .nav > li.current-menu-item > a:first-letter, 
+.navbar .nav > li.current-menu-ancestor > a:first-letter {
+    font: 100 25px "Proxima Nova Regular",Arial,sans-serif;
+    color:          white;
+    text-shadow:    none;
+}
+.navbar-brand, .navbar-nav>li>a {
+    line-height: 80px;
+    height: 80px;
+    padding-top: 0;
+}
+ul.nav li.dropdown:hover ul.dropdown-menu{
+    display: block;
+    transition-delay: 0.5s;
+}
+
+/*footer {
+    position: relative;
+    margin-top: 25px;
+    background-color: white;
+}
+footer ul{
+    position: relative;
+    text-align: center;
+}
+footer li {
+    font: 100 13px "Proxima Nova Regular",Arial,sans-serif;
+    display: inline;
+}
+footer li a {
+    color: #102429;
+    text-decoration: none;
+    padding: 0 25px;
+}
+footer li a:hover{
+    color: #4abdbd !important;
+    text-decoration: none;
+}
+.ftrin-links{
+    width: 135em;
+    text-decoration: none;
+    padding: 2px 30em;
+    position: relative;
+    font: 10px "Proxima Nova Regular",Arial,sans-serif; 
+}
+.ftrin-links li {
+    font: 10px "Proxima Nova Regular",Arial,sans-serif;
+    display: inline;
+}
+.ftrin-links a{
+    text-decoration: none;
+    padding-right: 10px;
+    color: #102429;
+}
+.ftrin-links a:hover{
+    color: #4abdbd !important;
+    text-decoration: none;
+}*/

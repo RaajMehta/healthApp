@@ -1,0 +1,93 @@
+body{
+    line-height: 2.5;
+}
+.glyphicon{
+    top: 12px;
+}
+.logo{
+    margin-top: 10px;
+}
+.movable{
+    cursor: pointer;
+/*    border: 1px solid #066DAB;
+    border-radius: 4px 4px 4px 4px;*/
+    width: 6em;
+    height: 3em;
+    list-style-type: none;
+}
+.list-font{
+    margin-left: 8px;
+    font-size: 15px;
+}
+.fontList{
+    margin-top: 5px;
+}
+.tab-pane{
+    height:400px;
+    overflow-y:scroll;
+}
+input[type="number"], input[type="text"] {
+    width: 117px;
+}
+.limit{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.not_allowed{
+    height: 20px;
+    width: 20px;
+    margin: 0 auto;
+}
+ul.source, ul.target {
+    min-height: 50px;
+    margin: 0px 25px 10px 0px;
+    padding: 2px;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    list-style-type: none;
+    list-style-position: inside;
+}
+ul.source {
+    border-color: #bce8f1;
+}
+ul.target {
+    border-color: #add38d;
+}
+.source li, .target li {
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    text-shadow: 0 1px 0 #d9edf7;
+}
+.source li {
+    background-color: #d9edf7;
+    border: 1px solid #d9edf7;
+    color: #31708f;
+}
+.target li {
+    background-color: #ebf5e6;
+    border: 1px solid #d6e9c6;
+    color: #468847;
+}
+.sortable-dragging {
+    border-color: #ccc !important;
+    background-color: #fafafa !important;
+    color: #bbb !important;
+}
+.sortable-placeholder {
+    height: 40px;
+}
+.source .sortable-placeholder {
+    border: 2px dashed #f8e0b1 !important;
+    background-color: #fefcf5 !important;
+}
+.target .sortable-placeholder {
+    border: 2px dashed #add38d !important;
+    background-color: #f6fbf4 !important;
+}

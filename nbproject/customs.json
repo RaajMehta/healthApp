@@ -1,0 +1,16 @@
+{
+    "elements": {
+        "p": {}
+    },
+    "attributes": {
+        "size": {
+            "context": "input"
+        },
+        "ontouchstart": {
+            "context": "div"
+        },
+        "value": {
+            "context": "input"
+        }
+    }
+}
